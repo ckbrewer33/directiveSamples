@@ -1,5 +1,5 @@
-# directiveSamples
+# Directive amples
 A demonstration of some Angular 1 directives
 
-- Restric attribute
+- Restrict attribute
 - Isolate scope
