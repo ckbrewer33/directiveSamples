@@ -1,4 +1,4 @@
-# Directive amples
+# Directive Samples
 A demonstration of some Angular 1 directives
 
 - Restrict attribute
