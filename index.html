@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Directives</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="funWithDirectives.css" rel="stylesheet">
+
+</head>
+<body class="">
+
+    <div ng-app="funWithDirectives" class="container">
+        <h1>Customers</h1>
+        <hr>
+        <div ng-controller="customersController">
+
+            <!--Restrict attribute-->
+            <directive-element></directive-element>
+            <div directive-attribute></div>
+
+            <!--Isolate Scope-->
+            <isolate-scope-string-bind name="{{customer.name}}" street="{{customer.street}}"></isolate-scope-string-bind>
+            <isolate-scope-bidirection customer="customer"></isolate-scope-bidirection>
+            <isolate-scope-expression getCustomerName="nameFunction" getCustomerStreet="streetFunction"></isolate-scope-expression>
+        </div>
+    </div>
+
+
+    <script>
+        function nameFunction() {
+            console.lot('called nameFunction()');
+            return 'Fred'
+        }
+        function streetFunction() {
+            console.lot('called streetFunction()');
+            return '123 Fake Street';
+        }
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <script src="funWithDirectives.module.js"></script>
+    <script src="customers.controller.js"></script>
+
+    <script src="restrictDirectives/directiveElement.directive.js"></script>
+    <script src="restrictDirectives/directiveAttribute.directive.js"></script>
+    <script src="isolateScope/isolateScopeStringBind.directive.js"></script>
+    <script src="isolateScope/isolateScopeBidirection.directive.js"></script>
+</body>
+</html>
